@@ -1,0 +1,47 @@
+buildscript {
+    repositories {
+        // NOTE: You should declare only repositories that you need here
+        mavenLocal()
+        mavenCentral()
+        maven { url "http://repo.spring.io/release" }
+        maven { url "http://repo.spring.io/milestone" }
+        maven { url "http://repo.spring.io/snapshot" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.0.2.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'dbdaat'
+    version =  '1.0.0'
+}
+
+run {
+    systemProperties = System.properties
+}
+
+repositories {
+    // NOTE: You should declare only repositories that you need here
+    mavenLocal()
+    mavenCentral()
+    maven { url "http://repo.spring.io/release" }
+    maven { url "http://repo.spring.io/milestone" }
+    maven { url "http://repo.spring.io/snapshot" }
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter")
+    compile("org.dbunit:dbunit:2.4.9")
+    compile("mysql:mysql-connector-java:5.1.18")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+
+tasks.withType(Compile) {
+    options.encoding = "UTF-8"
+}

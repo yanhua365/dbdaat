@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<dataset>
+  <!-- ==================================================业务系统数据================================================================== -->
+  <!--  -->
+  <sys_bizsystem id="1" comments="BASE" sysNameEn="BASE" sysNameZh="基础平台" appkey="BASE" password="123456" 
+                address="http://localhost:8080/bxn-core-uic-internal" createdDate="2014-04-24" lastUpdated="2014-04-24"/>
+
+  <sys_bizsystem id="2" comments="SALARY" sysNameEn="SALARY" sysNameZh="薪资系统" appkey="SALARY" password="123456" 
+                address="http://localhost:8080/bxn-salary" createdDate="2014-04-24" lastUpdated="2014-04-24"/>
+
+  <sys_bizsystem id="3" comments="HR" sysNameEn="HR" sysNameZh="人事系统" appkey="HR" password="123456" 
+                address="http://localhost:8080/bxn-hr" createdDate="2014-04-24" lastUpdated="2014-04-24"/>
+
+
+  
+  <!-- ==================================================组织分类数据================================================================== -->
+  <sys_organization_category id="1" name="学校部门"  createdDate="2014-04-24" lastUpdated="2014-04-24" comments="学校部门"/>
+  <sys_organization_category id="2" name="班级学籍"  createdDate="2014-04-24" lastUpdated="2014-04-24" comments="班级学籍"/>
+  <sys_organization_category id="3" name="其它分类"  createdDate="2014-04-24" lastUpdated="2014-04-24" comments="其它分类"/>
+
+
+  <!-- ==================================================组织类型数据================================================================== -->
+  <sys_organization_type id="1" name="学校" systemType="1" createdDate="2014-04-24" lastUpdated="2014-04-24" comments="学校"/>
+  <sys_organization_type id="2" name="学部" systemType="1" createdDate="2014-04-24" lastUpdated="2014-04-24" comments="学部"/>
+  <sys_organization_type id="3" name="年级、届" systemType="1" createdDate="2014-04-24" lastUpdated="2014-04-24" comments="年级、届"/>
+  <sys_organization_type id="4" name="班级" systemType="1" createdDate="2014-04-24" lastUpdated="2014-04-24" comments="班级"/>
+  <sys_organization_type id="5" name="虚拟组织：未分部门、未分班" systemType="1" createdDate="2014-04-24" lastUpdated="2014-04-24" comments="虚拟组织：未分部门、未分班"/>
+  <sys_organization_type id="6" name="部门" systemType="1" createdDate="2014-04-24" lastUpdated="2014-04-24" comments="部门"/>
+  <sys_organization_type id="7" name="教研组" systemType="1" createdDate="2014-04-24" lastUpdated="2014-04-24" comments="教研组"/>
+  <sys_organization_type id="9" name="其它" systemType="1" createdDate="2014-04-24" lastUpdated="2014-04-24" comments="其它"/>
+
+  <!-- ==================================================组织================================================================== -->
+
+  <!-- 学校部门 - 学校-->
+  <sys_organization id="2" name="未分部门" category="1"  type="1" parent_id="1" internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1"  source_id="d2"/>
+  <sys_organization id="1" name="学校(部门)" category="1"  type="6" internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1"  source_id="x1"/>
+  
+
+
+  <!-- 班级学籍 - 学校 -->
+  <sys_organization id="3" name="学校(班级)" category="2"  type="1" internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1" source_id="x2"/>
+
+  <!-- 班级学籍 - 学部 -->
+  <sys_organization id="4" name="初中部" parent_id="3" category="2"  type="2"  internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1" source_id="xb2"/>
+  <sys_organization id="5" name="高中部" parent_id="3" category="2"  type="2"  internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1" source_id="xb1"/>
+  
+  <!-- 班级学籍 - 初中界 -->
+  <sys_organization id="6" name="初中2010界" parent_id="4" category="2"  type="3"  internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1" source_id="cj1"/>
+  <sys_organization id="7" name="初中2012界" parent_id="4" category="2"  type="3"  internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1" source_id="cj2"/>
+  <sys_organization id="8" name="初中2013界" parent_id="4" category="2"  type="3"  internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1" source_id="cj3"/>
+  <sys_organization id="9" name="初中2014界" parent_id="4" category="2"  type="3"  internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1" source_id="cj4"/>
+
+
+  <!-- 班级学籍 - 初中界下的未分班 -->
+  <sys_organization id="10" name="未分班" parent_id="6" category="2"  type="5"  internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1" source_id="cwfb1"/>
+  <sys_organization id="11" name="未分班" parent_id="7" category="2"  type="5"  internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1" source_id="cwfb2"/>
+  <sys_organization id="12" name="未分班" parent_id="8" category="2"  type="5"  internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1" source_id="cwfb3"/>
+  <sys_organization id="13" name="未分班" parent_id="9" category="2"  type="5"  internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1" source_id="cwfb4"/>
+
+  <!-- 班级学籍 - 高中界 -->
+  <sys_organization id="14" name="高中2010界" parent_id="5" category="2"  type="3"  internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1"  source_id="gj1"/>
+  <sys_organization id="15" name="高中2012界" parent_id="5" category="2"  type="3"  internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1" source_id="gj2"/>
+  <sys_organization id="16" name="高中2013界" parent_id="5" category="2"  type="3"  internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1" source_id="gj3"/>
+  <sys_organization id="17" name="高中2014界" parent_id="5" category="2"  type="3"  internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1" source_id="gj4"/>
+
+  <!-- 班级学籍 - 高中界下的未分班 -->
+  <sys_organization id="18" name="未分班" parent_id="14" category="2"  type="5"  internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1" source_id="gwfb1"/>
+  <sys_organization id="19" name="未分班" parent_id="15" category="2"  type="5"  internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1" source_id="gwfb2"/>
+  <sys_organization id="20" name="未分班" parent_id="16" category="2"  type="5"  internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1" source_id="gwfb3"/>
+  <sys_organization id="21" name="未分班" parent_id="17" category="2"  type="5"  internalOrg="1" active="1" deleted="0" createdDate="2014-04-24" lastUpdated="2014-04-24" seq="1" source_id="gwfb4"/>
+
+
+  <!-- ==================================================用户分类================================================================== -->
+  <sys_user_category id="1" comments="老师" name="老师" systemCategory="1"  createdDate="2014-04-24" lastUpdated="2014-04-24" />
+  <sys_user_category id="2" comments="退休教师" name="退休教师" systemCategory="1"  createdDate="2014-04-24" lastUpdated="2014-04-24" />
+  <sys_user_category id="3" comments="家长" name="家长" systemCategory="1"  createdDate="2014-04-24" lastUpdated="2014-04-24" />
+  <sys_user_category id="4" comments="学生" name="学生" systemCategory="1"  createdDate="2014-04-24" lastUpdated="2014-04-24" />
+  <sys_user_category id="5" comments="临时工" name="临时工" systemCategory="1"  createdDate="2014-04-24" lastUpdated="2014-04-24" />
+  <sys_user_category id="9" comments="其他" name="其他" systemCategory="1"  createdDate="2014-04-24" lastUpdated="2014-04-24" />
+
+  <!-- ==================================================用户================================================================== -->
+  <sys_user id="1" username="admin" source_id="sourceAdmin" password="123" uniqueNo="001" fullname="管理员" email="admin@bxschool.cn" cellPhone="13510011234" category="9" locked="0" deleted="0" active="1"  internalUser="1" createdDate="2014-04-24" lastUpdated="2014-04-24"/>
+  <sys_user id="2" username="tom" source_id="sourceTom" password="123" uniqueNo="002" fullname="TOM老师" email="tom@bxschool.cn" cellPhone="13510013366" category="1" locked="0" deleted="0" active="1"  internalUser="1" createdDate="2014-04-24" lastUpdated="2014-04-24"/>
+  <sys_user id="3" username="rose" source_id="sourceRose" password="123" uniqueNo="003" fullname="ROSE同学" email="rose@bxschool.cn" cellPhone="13510017788" category="4" locked="0" deleted="0" active="1"  internalUser="1" createdDate="2014-04-24" lastUpdated="2014-04-24"/>
+
+  <!-- ==================================================用户组织关联================================================================== -->
+  <!-- tom在学校的未分部门下 -->
+  <sys_organization_user id="1" organization_id="2" user_id="2" seq="1" position="语文老师"  createdDate="2014-04-24" lastUpdated="2014-04-24"/>
+  <!-- rose同学在初中2010界的未分班下 -->
+  <sys_organization_user id="2" organization_id="10" user_id="3" seq="1" position="班长"  createdDate="2014-04-24" lastUpdated="2014-04-24"/>
+
+  <!-- ==================================================角色================================================================== -->
+  <sys_role id="1" comments="超级管理员" roleNameEn="ROLE_ADMIN" roleNameZh="超级管理员" systemRole="1"  createdDate="2014-04-24" lastUpdated="2014-04-24" />
+  <sys_role id="2" comments="普通老师" roleNameEn="ROLE_TEACHER" roleNameZh="普通老师" systemRole="1"  createdDate="2014-04-24" lastUpdated="2014-04-24" />
+  <sys_role id="3" comments="普通学生" roleNameEn="ROLE_STUDENT" roleNameZh="普通学生" systemRole="1"  createdDate="2014-04-24" lastUpdated="2014-04-24" />
+  <!-- ==================================================用户角色关联================================================================== -->
+  <sys_user_role id="1" operatorId="" user_id="1" role_id="1" createdDate="2014-04-24" lastUpdated="2014-04-24"/>
+  <sys_user_role id="2" operatorId="" user_id="2" role_id="2" createdDate="2014-04-24" lastUpdated="2014-04-24"/>
+  <sys_user_role id="3" operatorId="" user_id="3" role_id="3" createdDate="2014-04-24" lastUpdated="2014-04-24"/>
+
+  <!-- ==================================================权限================================================================== -->
+  <sys_permission id="1" permNameEn="PERM_ADMIN" permNameZh="超级管理员权限" comments="超级管理员权限" createdDate="2014-04-24" lastUpdated="2014-04-24"  bizsystem_id="1"/>
+  <sys_permission id="2" permNameEn="PERM_TEACHER_OPERATION" permNameZh="普通教师操作权限" comments="普通教师操作权限" createdDate="2014-04-24" lastUpdated="2014-04-24"  bizsystem_id="1"/>
+  <sys_permission id="3" permNameEn="PERM_STUDENT_OPERATION" permNameZh="普通学生操作权限" comments="普通教师操作权限" createdDate="2014-04-24" lastUpdated="2014-04-24"  bizsystem_id="1"/>
+
+  <!-- ==================================================角色权限关联================================================================== -->
+  <sys_role_permission id="1" role_id="1" permission_id="1"  createdDate="2014-04-24" lastUpdated="2014-04-24"/>
+  <sys_role_permission id="2" role_id="2" permission_id="2"  createdDate="2014-04-24" lastUpdated="2014-04-24"/>
+  <sys_role_permission id="3" role_id="3" permission_id="3"  createdDate="2014-04-24" lastUpdated="2014-04-24"/>
+
+
+  <!-- ==================================================配置属性数据================================================================== -->
+  <sys_configproperty/>
+  <sys_dic_data/>
+  <sys_dic_type/>
+  <sys_user_op_log/>
+  <!-- @guoji 删除这个表 -->
+  <sys_organization_user_position/>
+</dataset>
